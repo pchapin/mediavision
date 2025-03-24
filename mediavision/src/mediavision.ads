@@ -1,14 +1,14 @@
 ---------------------------------------------------------------------------
--- FILE    : media.ads
--- SUBJECT : Parent package for the Media Tools library.
--- AUTHOR  : (C) Copyright 2010 by Peter C. Chapin
+-- FILE    : mediavision.ads
+-- SUBJECT : Parent package for the MediaVision library.
+-- AUTHOR  : (C) Copyright 2026 by Peter Chapin
 --
 -- Please send comments or bug reports to
 --
---      Peter C. Chapin <PChapin@vtc.vsc.edu>
+--      Peter Chapin <spicacality@kelseymountian.org>
 ---------------------------------------------------------------------------
 
-package Media is
+package Mediavision is
 
    -- A general exception to be raised by subprograms that are just place holders.
    Not_Implemented : exception;
@@ -28,4 +28,4 @@ package Media is
    function Rotate_Right(Value : Byte; Count : Natural) return Byte;
    pragma Import(Intrinsic, Rotate_Right);
 
-end Media;
+end Mediavision;

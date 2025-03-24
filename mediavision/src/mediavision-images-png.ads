@@ -1,15 +1,6 @@
----------------------------------------------------------------------------
--- FILE    : media-images-png.ads
--- SUBJECT : Package for manipulating PNG image files.
--- AUTHOR  : (C) Copyright 2010 by Peter C. Chapin
---
--- Please send comments or bug reports to
---
---      Peter C. Chapin <PChapin@vtc.vsc.edu>
----------------------------------------------------------------------------
 private with Ada.Containers.Indefinite_Vectors;
 
-package Media.Images.PNG is
+package Mediavision.Images.PNG is
 
    -- Raised when an input image is not a valid PNG image.
    Corrupt_Image : exception;
@@ -20,19 +11,19 @@ package Media.Images.PNG is
    procedure Read(Image : out PNG_Image; File_Name : in String);
 
    -- Conversion procedures to and from the raw, in-memory image format.
-   procedure Convert_To_Raw(Image : in PNG_Image; Raw_Image : out Media.Images.Image);
-   procedure Convert_To_PNG(Raw_Image : in Media.Images.Image; Image : out PNG_Image);
+   procedure Convert_To_Raw(Image : in PNG_Image; Raw_Image : out Mediavision.Images.Image);
+   procedure Convert_To_PNG(Raw_Image : in Mediavision.Images.Image; Image : out PNG_Image);
 
    -- Writes a PNG image to the indicated file.
    procedure Write(Image : in PNG_Image; File_Name : in String);
 
-   -- Returns the number of PNG chunks in the image. Returns zero if the image has not been read.
+   -- Returns the number of PNG chunks in the image or zero if the image has not been read.
    function Chunk_Count(Image : PNG_Image) return Natural;
 
 private
    type Chunk_Type is (tEXt, zEXt);
-   type CRC_Array  is array(0 .. 3) of Media.Images.Image_Byte;
-   type Data_Array is array(Natural range <>) of Media.Images.Image_Byte;
+   type CRC_Array  is array(0 .. 3) of Mediavision.Images.Image_Byte;
+   type Data_Array is array(Natural range <>) of Mediavision.Images.Image_Byte;
 
    type PNG_Chunk(Size : Natural) is
       record
@@ -49,4 +40,4 @@ private
          Chunks : Chunk_Vectors.Vector;
       end record;
 
-end Media.Images.PNG;
+end Mediavision.Images.PNG;

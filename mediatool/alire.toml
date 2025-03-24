@@ -1,0 +1,18 @@
+name = "mediatool"
+description = "A program to manipulate media files"
+version = "0.1.0-dev"
+
+authors = ["Peter Chapin"]
+maintainers = ["Peter Chapin <spicacality@kelseymountain.org>"]
+maintainers-logins = ["pchapin"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["mediatool"]
+
+[[depends-on]]
+mediavision = "*"
+
+[[pins]]
+mediavision = { path '../mediavision' }
