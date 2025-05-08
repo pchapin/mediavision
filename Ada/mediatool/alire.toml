@@ -15,4 +15,4 @@ executables = ["mediatool"]
 mediavision = "*"
 
 [[pins]]
-mediavision = { path '../mediavision' }
+mediavision = { path = "../mediavision" }
